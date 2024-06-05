@@ -1,8 +1,22 @@
 import React from "react";
 import Parent from "./Parent";
 import Child from "./Child";
+//const cars=["Ford","BMW","Audi"];
 function App() {
-  let bool= true;
+  const handleChange=(event) =>{
+    console.log(event.target.value);
+  }
+  const handleSubmit=(event)=>{
+    event.preventDefault();
+  }
+
+  //to set and get item from local storage
+  // const handleSubmit=()=>{
+  //   localStorage.setItem("name",name)
+  //   localStorage.getItem("name")
+  // }
+
+  //let  x=5;
   // let demo = false;
 
   //  let demo=false;
@@ -27,11 +41,28 @@ function App() {
   //   text="Hello";
   // }
 
+
+
+  //In form, don't put value and required in react
+
   //using ternary operator 
   return (
     <div className="App">
+      <form>
+        <label>Enter your name:</label>
+        <input type="text" name="name" onChange={handleChange}/> 
+        <button type="submit" onClick={handleSubmit}>Submit</button>
+      </form>
 
-    <h1>{bool?<Parent/>:<Child/>}</h1>
+     {/* <ul>
+      {cars.map((car) => (  //car is a key in map method
+        <li>{car}</li>
+      ))
+      }
+     </ul> */}
+      {/* <h1>{(x<10)?"true":"false"}</h1> */}
+
+    {/* <h1>{bool?<Parent/>:<Child/>}</h1> */}
       {/* <h1>{demo ? <Parent /> : <Child />}</h1> */}
 
       {/* {demo}</h1> */}
